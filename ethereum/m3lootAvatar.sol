@@ -42,7 +42,7 @@ contract m3lootAvatar is ERC721, Ownable {
         _burn(tokenId);
     }
 
-    function _beforeTokenTransfer(address from, address to, uint256) pure override internal {
+    function _beforeTokenTransfer(address from, address to, uint256, uint256) virtual override internal {
         require(from == address(0) || to == address(0), "This a Soulbound token. It cannot be transferred. It can only be burned by the token owner.");
     }
 
